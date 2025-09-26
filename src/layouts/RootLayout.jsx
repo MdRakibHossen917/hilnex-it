@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Navbar from "../Components/Shared/Navbar/Navbar";
-import Footer from "../Components/Shared/Footer/Footer";
+ 
  
 
 const RootLayout = () => {
@@ -12,9 +12,7 @@ const RootLayout = () => {
         <Outlet />
       </div>
   
-       <div className="relative z-10">
-           <Footer />
-            </div>
+        
     </div>
   );
 };

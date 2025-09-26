@@ -86,7 +86,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <NavLink
             to="/login"
-            className="flex items-center gap-2 bg-[#00f2bc] text-black px-4 py-2 rounded font-medium hover:bg-green-500 transition"
+            className="flex items-center gap-2 bg-[#0072bc] text-black px-4 py-2 rounded font-medium hover:bg-[#0566a6] transition"
           >
             <FaUser /> Login
           </NavLink>
