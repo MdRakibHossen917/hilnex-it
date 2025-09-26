@@ -1,0 +1,82 @@
+/* Button background */
+.neon_btn {
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  overflow: hidden;
+  width: 10rem; /* w-40 */
+  height: 3rem; /* h-12 */
+  border-radius: 0.25rem; /* optional rounded */
+}
+
+/* Animated borders */
+.neon_btn span {
+  position: absolute;
+  display: block;
+}
+
+/* Top border */
+.neon_btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f2bc);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+  0% { left: -100%; }
+  50%,100% { left: 100%; }
+}
+
+/* Right border */
+.neon_btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ecd71a);
+  animation: animate2 1s linear infinite 0.25s;
+}
+@keyframes animate2 {
+  0% { top: -100%; }
+  50%,100% { top: 100%; }
+}
+
+/* Bottom border */
+.neon_btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #16161a);
+  animation: animate3 1s linear infinite 0.5s;
+}
+@keyframes animate3 {
+  0% { right: -100%; }
+  50%,100% { right: 100%; }
+}
+
+/* Left border */
+.neon_btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #2b2b2e);
+  animation: animate4 1s linear infinite 0.75s;
+}
+@keyframes animate4 {
+  0% { bottom: -100%; }
+  50%,100% { bottom: 100%; }
+}
+
+/* Glow effect on hover */
+.neon_btn:hover {
+  box-shadow: 
+    0 0 20px #00f2bc, 
+    0 0 40px #ecd71a, 
+    0 0 60px #16161a, 
+    0 0 80px #2b2b2e;
+  transition: 0.3s;
+}
