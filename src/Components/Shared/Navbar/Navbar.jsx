@@ -39,7 +39,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="w-10/12 mx-auto flex justify-between items-center">
+      <div className="w-9/12 mx-auto flex justify-between items-center">
         {/* Logo */}
         <NavLink to="/">
           <img src={logo} alt="Hilnex Logo" className="h-10" />

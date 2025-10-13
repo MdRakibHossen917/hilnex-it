@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { SiTypescript, SiCurl } from "react-icons/si";
 import { VscFileCode } from "react-icons/vsc";
+// import CanvasParticles from "../../CanvasParticles/CanvasParticles";
 
 const CODE_SNIPPETS = {
   TypeScript: `// TypeScript Example
@@ -181,10 +182,10 @@ const TAB_ICONS = {
 // --- Simple syntax highlighter ---
 const highlightCode = (code) => {
   // Colors
-  const KEYWORD_COLOR = "#ff79c6"; // pinkish keywords
-  const TYPE_COLOR = "#8be9fd"; // cyan types
-  const STRING_COLOR = "#f1fa8c"; // yellow strings
-  const NUMBER_COLOR = "#bd93f9"; // purple numbers
+  const KEYWORD_COLOR = "#ee2496"; // pinkish keywords
+  const TYPE_COLOR = "#17a7c7"; // cyan types
+  const STRING_COLOR = "#8b9707"; // yellow strings
+  const NUMBER_COLOR = "#df0fbc"; // purple numbers
   const COMMENT_COLOR = "#6272a4"; // grayish-blue comments
 
   let highlighted = code;
@@ -236,6 +237,7 @@ const Code = () => {
   return (
     <div
       className="border border-gray-900 pb-20 md:pb-30 bg-black text-white"
+      
     style={{
   background: "#0d0d0d", // main black background
   backgroundImage: `
@@ -256,14 +258,17 @@ const Code = () => {
 
     >
       {/* Header Section */}
+
+        {/* <CanvasParticles /> */}
       <div className="bg-black w-full p-10 text-center border-none">
+        
         <h2 className="text-3xl font-bold">
           Making voice AI simple
           <br />
           and accessible.
         </h2>
       </div>
-      <div className=" w-10/12 mx-auto ">
+      <div className=" w-9/12 mx-auto ">
         {/* Top SVG & Dots */}
        {/* Top SVG & Dots Section */}
 <div className="bg-black border  border-gray-900  flex justify-between p-2">
