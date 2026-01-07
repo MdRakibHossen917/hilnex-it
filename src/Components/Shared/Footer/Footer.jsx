@@ -14,19 +14,14 @@ import Mastercard from "../../../assets/payment/Mastercard.png";
 import {
   FaFacebookF,
   FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-  FaGoogle,
   FaGithub,
-  FaPinterestP,
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaTiktok,
 } from "react-icons/fa";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { TbMessages, TbWorld } from "react-icons/tb";
-import { FaThreads, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const titleStyle = "text-white font-bold mb-2 text-base md:underline";
@@ -37,52 +32,22 @@ const Footer = () => {
     {
       icon: <FaFacebookF />,
       label: "Facebook",
-      url: "https://www.facebook.com/HilnexLimited/",
-    },
-    {
-      icon: <FaInstagram />,
-      label: "Instagram",
-      url: "https://www.instagram.com/hilnexltd/",
-    },
-    {
-      icon: <FaXTwitter />,
-      label: "Twitter",
-      url: "https://twitter.com/hilnexltd",
+      url: "https://www.facebook.com/md.rakib.hossen.41751",
     },
     {
       icon: <FaLinkedinIn />,
       label: "LinkedIn",
-      url: "https://www.linkedin.com/company/hilnex",
-    },
-    {
-      icon: <FaTiktok />,
-      label: "Tiktok",
-      url: "https://www.tiktok.com/@hilnexltd",
-    },
-    {
-      icon: <FaThreads />,
-      label: "Threads",
-      url: "https://www.threads.net/@hilnexltd",
-    },
-    {
-      icon: <FaYoutube />,
-      label: "YouTube",
-      url: "https://www.youtube.com/@hilnexltd",
-    },
-    {
-      icon: <FaGoogle />,
-      label: "Google",
-      url: "https://www.google.com/search?kgmid=/g/11yk8gr1sl&hl=en-BD&q=HiLNEX+Limited",
+      url: "https://www.linkedin.com/in/rakibhossen917/",
     },
     {
       icon: <FaGithub />,
       label: "GitHub",
-      url: "https://github.com/hilnex",
+      url: "https://github.com/MdRakibHossen917",
     },
     {
-      icon: <FaPinterestP />,
-      label: "Pinterest",
-      url: "https://www.pinterest.com/hilnex/",
+      icon: <FaXTwitter />,
+      label: "Twitter",
+      url: "#",
     },
   ];
 

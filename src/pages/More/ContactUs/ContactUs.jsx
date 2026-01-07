@@ -3,8 +3,7 @@ import {
   FaFacebookF, 
   FaTwitter, 
   FaLinkedinIn, 
-  FaInstagram,
-  FaTiktok,
+  FaGithub,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
@@ -80,28 +79,23 @@ const ContactUs = () => {
   {
     name: "Facebook",
     icon: <FaFacebookF />,
-    url: "https://www.facebook.com/HilnexLimited/",
-  },
-  {
-    name: "Twitter",
-    icon: <FaTwitter />,
-    url: "https://x.com/hilnexltd",
+    url: "https://www.facebook.com/md.rakib.hossen.41751",
   },
   {
     name: "LinkedIn",
     icon: <FaLinkedinIn />,
-    url: "https://www.linkedin.com/company/hilnex/", 
+    url: "https://www.linkedin.com/in/rakibhossen917/",
   },
   {
-    name: "Instagram",
-    icon: <FaInstagram />,
-    url: "https://www.instagram.com/hilnexltd/",
+    name: "GitHub",
+    icon: <FaGithub />,
+    url: "https://github.com/MdRakibHossen917",
   },
   {
-    name: "TikTok",
-    icon: <FaTiktok />,
-    url: "https://www.tiktok.com/@hilnexltd",
-  }
+    name: "Twitter",
+    icon: <FaTwitter />,
+    url: "#",
+  },
 ];
 
 

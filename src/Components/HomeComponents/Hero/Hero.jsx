@@ -10,6 +10,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
+  FaGithub,
   FaTimes,
   FaCalendarAlt,
   FaClock,
@@ -101,24 +102,24 @@ const Hero = () => {
   const socialLinks = useMemo(
     () => [
       {
-        href: "https://www.facebook.com/HilnexLimited/",
+        href: "https://www.facebook.com/md.rakib.hossen.41751",
         icon: <FaFacebookF />,
         color: "hover:text-[#1877f2]",
       },
       {
-        href: "https://www.instagram.com/hilnexltd/",
-        icon: <FaInstagram />,
-        color: "hover:text-[#f56ed8]",
-      },
-      {
-        href: "https://x.com/hilnexltd",
-        icon: <FaTwitter />,
-        color: "hover:text-[#1da1f2]",
-      },
-      {
-        href: "https://www.linkedin.com/company/hilnex/",
+        href: "https://www.linkedin.com/in/rakibhossen917/",
         icon: <FaLinkedinIn />,
         color: "hover:text-[#0a66c2]",
+      },
+      {
+        href: "https://github.com/MdRakibHossen917",
+        icon: <FaGithub />,
+        color: "hover:text-[#ffffff]",
+      },
+      {
+        href: "#",
+        icon: <FaTwitter />,
+        color: "hover:text-[#1da1f2]",
       },
     ],
     []
@@ -349,15 +350,15 @@ const Hero = () => {
 
       <section
         ref={heroSectionRef}
-        className="hero-section relative bg-black text-white flex flex-col justify-start overflow-hidden"
+        className="hero-section relative bg-black text-white flex flex-col justify-between overflow-hidden md:h-screen"
       >
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-auto">
           <ParticlesBackground restrictClickToContainer={heroSectionRef} />
         </div>
 
-        <div className="relative z-30 w-11/12 md:w-9/12 lg:md:w-9/12 mx-auto flex flex-col md:flex-row items-center gap-2 md:gap-2 lg:gap-2 py-3 md:py-12 lg:pt-26 lg:-mt-20 ">
-          <div className="flex-1 flex flex-col justify-center text-left w-full mt-8">
-            <h1 className="text-[1.5rem] uppercase sm:text-[1.4rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.65rem]  2xl:text-[2.5rem] font-bold mt-20 md:mb-4 leading-tight">
+        <div className="relative z-30 w-11/12 md:w-9/12 lg:md:w-9/12 mx-auto flex flex-col md:flex-row items-center gap-2 md:gap-2 lg:gap-2 py-3 md:py-8 lg:py-10 flex-1 md:flex-none">
+          <div className="flex-1 flex flex-col justify-center text-left w-full mt-4">
+            <h1 className="text-[1.5rem] uppercase sm:text-[1.4rem] md:text-[1.3rem] lg:text-[1.4rem] xl:text-[1.65rem]  2xl:text-[2.5rem] font-bold mt-20 md:mb-2 leading-tight">
               <span className="bg-gradient-to-r from-white to-[#ffffff] text-transparent bg-clip-text block">
                 BEST IT & SOFTWARE
               </span>
@@ -374,7 +375,7 @@ const Hero = () => {
               </span>
             </h1>
 
-            <p className="text-gray-400 text-sm sm:text-xs md:text-sm lg:text-lg mt-4 md:mt-4 max-w-2xl">
+            <p className="text-gray-400 text-sm sm:text-xs md:text-sm lg:text-lg   max-w-2xl">
               Empowering Businesses Through Technology Build
               <span className="inline lg:hidden">
                 <br />
@@ -382,8 +383,8 @@ const Hero = () => {
               <span className="hidden lg:inline">, </span>
               Grow and Transform Your Brand With Hilnex.
             </p>
-
-            <div className="mt-8 flex flex-col items-center gap-4 w-full max-w-[200px] md:max-w-[250px] lg:max-w-[250px] xl:max-w-[300px]">
+            
+            <div className="mt-4 md:mt-6 flex flex-col items-center gap-4 w-full max-w-[200px] md:max-w-[250px] lg:max-w-[250px] xl:max-w-[300px]">
               <button
                 onClick={handleScheduleClick}
                 aria-label="Schedule a free consultation call"
@@ -435,7 +436,7 @@ const Hero = () => {
           </div>
 
           <div className="hidden md:flex flex-1 justify-center md:justify-end w-full">
-            <div className="w-full max-w-[250px] md:max-w-[220px] lg:max-w-[270px] xl:max-w-[300px] 2xl:max-w-[350px] md:mt-1 lg:mt-8 xl:-translate-x-[50px] 2xl:-translate-x-[150px] transform">
+            <div className="w-full max-w-[400px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] 2xl:max-w-[700px] md:mt-1 lg:mt-8 xl:-translate-x-[50px] 2xl:-translate-x-[150px] transform">
               <DotLottieReact
                 src="https://lottie.host/1a6ba6cf-6100-4516-83ad-8de76c8ed66f/viHwvdJwpN.lottie"
                 loop
@@ -446,7 +447,7 @@ const Hero = () => {
         </div>
 
         <div
-          className={`relative z-10 w-11/12 md:w-9/12 mx-auto mb-10 mt-5 md:mb-8 lg:mb-12 transition-all duration-500 ${
+          className={`relative z-10 w-11/12 md:w-9/12 mx-auto mb-6 md:mb-4 lg:mb-6 md:-mt-8   transition-all duration-500 ${
             loading
               ? "blur-sm opacity-60 pointer-events-none"
               : "blur-0 opacity-100"
@@ -456,7 +457,7 @@ const Hero = () => {
             {stats.map((stat, index) => (
               <div
                 key={stat.id}
-                className={`group flex items-center justify-center py-2 md:py-3 lg:py-4 px-4 transition-all duration-300 border-b border-white/20 ${
+                className={`group flex items-center justify-center py-2 md:py-3 px-4 transition-all duration-300 border-b border-white/20 ${
                   index % 2 === 1 ? "border-l border-white/20" : ""
                 } md:border-b-0 ${
                   index < stats.length - 1 ? "md:border-r border-white/20" : ""
@@ -482,7 +483,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="w-full marquee-wrapper1 xl:-mt-5">
+        <div className="w-full marquee-wrapper1 md:mt-auto">
           <div className="marquee-container">
             <div className="marquee-text">
               {[...Array(5)].map((_, index) => (
