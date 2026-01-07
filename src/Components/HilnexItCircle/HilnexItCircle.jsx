@@ -1,143 +1,75 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import developmentImg from "../../assets/Image/development-circle.png";
+import { FaNodeJs, FaReact, FaWordpress, FaAngular } from "react-icons/fa";
+import { SiAngular, SiMagento, SiDotnet } from "react-icons/si";
 import "./HilnexItCircle.css";
-import vapiBGVideo from "../../assets/video/vapiVideo.mp4";
-import coadingVideo from "../../assets/video/coading.mp4";
 
 const HilnexItCircle = () => {
-  const textRef = useRef(null);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    class TextScramble {
-      constructor(el) {
-        this.el = el;
-        this.chars = "!<>-_\\/[]{}—=+*^?#________";
-        this.update = this.update.bind(this);
-      }
-
-      setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => (this.resolve = resolve));
-        this.queue = [];
-
-        for (let i = 0; i < length; i++) {
-          const from = oldText[i] || "";
-          const to = newText[i] || "";
-          const start = Math.floor(Math.random() * 30);
-          const end = start + Math.floor(Math.random() * 30);
-          this.queue.push({ from, to, start, end });
-        }
-
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-      }
-
-      update() {
-        let output = "";
-        let complete = 0;
-
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-          let { from, to, start, end, char } = this.queue[i];
-
-          if (this.frame >= end) {
-            complete++;
-            output += to;
-          } else if (this.frame >= start) {
-            if (!char || Math.random() < 0.28) {
-              char = this.randomChar();
-              this.queue[i].char = char;
-            }
-            output += `<span class="dud">${char}</span>`;
-          } else {
-            output += from;
-          }
-        }
-
-        this.el.innerHTML = output;
-
-        if (complete === this.queue.length) {
-          this.resolve();
-        } else {
-          this.frameRequest = requestAnimationFrame(this.update);
-          this.frame++;
-        }
-      }
-
-      randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
-      }
-    }
-
-    const scramble = new TextScramble(textRef.current);
-    scramble.setText("Innovative IT & Web");
-    const interval = setInterval(() => {
-      scramble.setText("Innovative IT & Web");
-    }, 5000);
-
-    const video = videoRef.current;
-    if (video) {
-      video.play().catch(() => {
-        video.muted = true;
-        video.play();
-      });
-    }
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="relative w-full bg-black overflow-hidden flex flex-col items-center justify-center z-20">
       <div className="text-center text-white flex flex-col items-center justify-center md:mt-0 -mb-12 md:px-0 w-full">
         <div className="glob-map-text text-center w-full">
           <h1
-            ref={textRef}
             className="iceberg-regular text-white text-xl w-full uppercase border-t border-b border-white/20 p-3 
                        bg-gradient-to-r from-black via-[#181818] to-black mx-auto text-center"
           >
             Innovative IT & Web
           </h1>
         </div>
-
-        <div className="text-white/95 text-sm sm:text-base md:text-lg text-center w-full mt-4">
-          <p className="px-[10px]">
-            Empowering your digital journey with next-generation technology and
-            scalable solutions
-          </p>
-        </div>
-      </div>
-
-      <div className="absolute w-full h-full top-0 left-0">
-        <video
-          className="w-full h-full object-cover opacity-40"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src={vapiBGVideo} type="video/mp4" />
-        </video>
       </div>
 
       <div
-        className="relative z-10 flex flex-col md:flex-row items-center justify-center
-                   w-full md:w-10/12 lg:w-9/12 xl:w-9/12 2xl:w-9/12
-                   min-h-[400px] md:min-h-[600px] lg:min-h-[680px] xl:min-h-[750px] 2xl:min-h-[820px] md:ml-20"
+        className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12
+                   w-full md:w-10/12 lg:w-9/12 xl:w-9/12 2xl:w-9/12 mx-auto
+                   min-h-[400px] md:min-h-[600px] lg:min-h-[680px] xl:min-h-[750px] 2xl:min-h-[820px]
+                   py-8 md:py-12 px-4 md:px-0"
       >
-        <div className="flex-1 flex items-center justify-center">
-          <video
-            ref={videoRef}
-            src={coadingVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="rounded-lg shadow-2xl w-[90%] md:w-[90%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]
-                       h-auto max-h-[500px] object-cover"
-          />
+        <div className="flex-1 flex flex-col justify-center text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
+            COMPREHENSIVE WEB DEVELOPMENT SERVICES
+          </h2>
+          <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed mb-6">
+            We are top-class web designing and development services to help your business for improving sales and productivity of your business. We understand that different businesses have different requirements, so we offer customized web development solutions as per the unique requirements of various business niche. Our web developers are expert in al latest web development frameworks such as NodeJS, AngularJS, ReactJS, Magento, WordPress, .NET, and many others.
+          </p>
+          
+          {/* Technology Icons Buttons */}
+          <div className="flex flex-wrap items-center gap-3 md:gap-4">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <FaNodeJs className="text-xl text-[#339933]" />
+              <span>NodeJS</span>
+            </button>
+            
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <SiAngular className="text-xl text-[#DD0031]" />
+              <span>AngularJS</span>
+            </button>
+            
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <FaReact className="text-xl text-[#61DAFB]" />
+              <span>ReactJS</span>
+            </button>
+            
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <SiMagento className="text-xl text-[#EE672F]" />
+              <span>Magento</span>
+            </button>
+            
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <FaWordpress className="text-xl text-[#21759B]" />
+              <span>WordPress</span>
+            </button>
+            
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 rounded-lg transition-all duration-300 text-white text-sm md:text-base">
+              <SiDotnet className="text-xl text-[#512BD4]" />
+              <span>.NET</span>
+            </button>
+          </div>
+          
+          {/* View More Button */}
+          <button className="mt-6 md:mt-8 px-6 py-3 bg-[#ff8402] hover:bg-[#e67602] text-white font-semibold rounded-lg transition-all duration-300 text-sm md:text-base w-fit">
+            View More
+          </button>
         </div>
 
         <div className="hidden md:flex flex-1 items-center justify-center">

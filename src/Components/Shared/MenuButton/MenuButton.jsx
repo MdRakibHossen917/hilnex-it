@@ -3,9 +3,9 @@ import favBlack from "../../../assets/Brand/FaviconBlack.svg";
 
 const hilnexInfo = {
   name: "HiLNEX LIMITED",
-  phone1: "09649-888833",
-  phone2: "01711-894488",
-  email: "info@hilnex.com",
+  phone1: "01300981501",
+  phone2: "",
+  email: "mdrakibhossencse@gmail.com",
   location:
     "Muktobangla Complex, Suite-124, Level-6, Mirpur-1, Dhaka-1216, Bangladesh",
   services: [

@@ -331,11 +331,11 @@ const JoulesLabs = () => {
           <div className="flex flex-col justify-center items-center mx-auto my-2 text-center">
             <div className="w-full max-w-4xl px-4">
               <h1 className="text-xl iceberg-regular font-bold text-white mb-2 leading-tight">
-                Build Your Digital Future with Hilnex
+              Shape Your Digital Future with Hilnex
               </h1>
               <p className="text-lg mx-auto text-gray-300/70 mb-4 leading-relaxed max-w-md sm:max-w-lg">
-                Empowering businesses with <br /> Web, Software, Mobile App, and
-                Digital solutions crafted by experts who care.
+              We deliver powerful Web, Software, Mobile App, and Digital Solutions
+              designed by experts who truly care about your success.
               </p>
               <button 
                 className="px-6 py-2 bg-white text-black font-semibold hover:bg-gray-300 transition-all text-base focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] focus:ring-offset-2 focus:ring-offset-[#1A1A1A]"
@@ -449,11 +449,11 @@ const JoulesLabs = () => {
           <div className="flex flex-col justify-center items-center px-8 p-2 my-6">
             <div className="w-full max-w-2xl text-center">
               <h1 className="text-2xl font-bold text-white mb-2 leading-tight iceberg-regular">
-                Build Your Digital Future with Hilnex
+                Shape Your Digital Future with Hilnex
               </h1>
               <p className="text-lg w-[450px] mx-auto text-gray-300 mb-2 leading-relaxed">
-                Empowering businesses with cutting-edge Web, Software, Mobile
-                App, and Digital solutions crafted by experts who care.
+                We deliver powerful Web, Software, Mobile App, and Digital Solutions
+                designed by experts who truly care about your success.
               </p>
               <button 
                 className="px-8 py-2 bg-white text-black font-semibold hover:bg-gray-300 transition-all text-lg focus:outline-none focus:ring-2 focus:ring-[#1A1A1A] focus:ring-offset-2 focus:ring-offset-[#1A1A1A]"
@@ -528,11 +528,11 @@ const JoulesLabs = () => {
                 aria-label="Call to action section"
               >
                 <h1 className="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-white mb-4 lg:mb-6 leading-tight iceberg-regular">
-                  Build Your Digital Future with Hilnex
+                  Shape Your Digital Future with Hilnex
                 </h1>
                 <p className="text-base lg:text-lg xl:text-xl 2xl:text-xl text-gray-300 mb-6 lg:mb-8 leading-relaxed">
-                  Empowering businesses with cutting-edge Web, Software, Mobile
-                  App, and Digital solutions crafted by experts who care.
+                  We deliver powerful Web, Software, Mobile App, and Digital Solutions
+                  designed by experts who truly care about your success.
                 </p>
                 <button
                   className="px-6 lg:px-8 xl:px-10 2xl:px-12 py-3 lg:py-4 xl:py-4 2xl:py-4

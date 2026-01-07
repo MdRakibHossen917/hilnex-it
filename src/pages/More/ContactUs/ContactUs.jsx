@@ -58,8 +58,8 @@ const ContactUs = () => {
     {
       icon: <FaPhone className="text-4xl text-[#ff8402]" />,
       title: "Call Us",
-      details: "09649-888833",
-      subDetails: "01711-894488",
+      details: "01300981501",
+      subDetails: "",
     },
     {
       icon: <FaMapMarkerAlt className="text-4xl text-[#ff8402]" />,

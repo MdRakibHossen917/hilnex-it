@@ -70,10 +70,10 @@ const AboutUs = () => {
       "Customer Support",
     ],
     contact: {
-      phone1: "09649-888833",
-      phone2: "01711-894488",
-      email1: "info@hilnex.com",
-      email2: "hilnex@yahoo.com",
+      phone1: "01300981501",
+      phone2: "",
+      email1: "mdrakibhossencse@gmail.com",
+      email2: "",
       address:
         "Muktobangla Complex, Suite-124, Level-6, Mirpur-1, Dhaka-1216, Bangladesh.",
     },

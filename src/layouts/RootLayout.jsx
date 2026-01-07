@@ -40,22 +40,6 @@ const RootLayout = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.ctrlKey && ["c","x","v","a"].includes(e.key.toLowerCase())) e.preventDefault();
-    };
-    const handleSelectStart = (e) => e.preventDefault();
-    const handleDragStart = (e) => e.preventDefault();
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("selectstart", handleSelectStart);
-    document.addEventListener("dragstart", handleDragStart);
-    document.body.style.userSelect = "none";
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener("selectstart", handleSelectStart);
-      document.removeEventListener("dragstart", handleDragStart);
-    };
-  }, []);
 
   const isRouteLoading = navigation.state === "loading";
   if (initialLoading) return <LoadingSpinner />;

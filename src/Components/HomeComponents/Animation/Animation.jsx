@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import CellEffect from "../../CellEffect/CellEffect";
 import Feature from "../../Shared/Feature/Feature";
+import WireframeImage from "../../../assets/AnimationPage/Wireframe.webp";
+import FinalUIImage from "../../../assets/AnimationPage/Final UI.webp";
+import RowImage from "../../../assets/AnimationPage/row.webp";
+import Row1Image from "../../../assets/AnimationPage/row1.webp";
 
 const HomeCard1 = () => {
   return (
@@ -202,16 +206,16 @@ const HomeCard2 = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded overflow-hidden shadow-lg">
               <img
-                src="https://placehold.co/400x400/2a2e45/e0e0e0?text=Visual+Builder+Form"
-                alt="Visual Builder"
+                src={WireframeImage}
+                alt="Wireframe"
                 className="w-full h-auto"
               />
             </div>
 
             <div className="rounded overflow-hidden shadow-lg">
               <img
-                src="https://placehold.co/400x400/2a2e45/e0e0e0?text=STRIDE+Visual"
-                alt="STRIDE Visual"
+                src={FinalUIImage}
+                alt="Final UI"
                 className="w-full h-auto"
               />
             </div>
@@ -366,8 +370,8 @@ const HomeCard3 = () => {
                 <span className="text-green-500">5.18%</span>
               </div>
               <img
-                src="https://placehold.co/400x200/2a2e45/e0e0e0?text=Chart"
-                alt="Placeholder chart"
+                src={RowImage}
+                alt="Chart"
                 className="w-full h-auto"
               />
             </div>
@@ -533,8 +537,8 @@ const HomeCard4 = () => {
                 <span className="text-green-500">5.18%</span>
               </div>
               <img
-                src="https://placehold.co/400x200/2a2e45/e0e0e0?text=OMG"
-                alt="Placeholder chart"
+                src={Row1Image}
+                alt="OMG"
                 className="w-full h-auto"
               />
             </div>
@@ -609,7 +613,6 @@ const HomeCard4 = () => {
 const Animation = () => {
   const playerRef = useRef(null);
   const sectionRef = useRef(null);
-  const textRef = useRef(null);
 
   useEffect(() => {
     const playAnimation = () => {
@@ -639,81 +642,6 @@ const Animation = () => {
     };
   }, []);
 
-  useEffect(() => {
-    class TextScramble {
-      constructor(el) {
-        this.el = el;
-        this.chars = "!<>-_\\/[]{}—=+*^?#________";
-        this.update = this.update.bind(this);
-      }
-
-      setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => (this.resolve = resolve));
-        this.queue = [];
-
-        for (let i = 0; i < length; i++) {
-          const from = oldText[i] || "";
-          const to = newText[i] || "";
-          const start = Math.floor(Math.random() * 30);
-          const end = start + Math.floor(Math.random() * 30);
-          this.queue.push({ from, to, start, end });
-        }
-
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-      }
-
-      update() {
-        let output = "";
-        let complete = 0;
-
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-          let { from, to, start, end, char } = this.queue[i];
-
-          if (this.frame >= end) {
-            complete++;
-            output += to;
-          } else if (this.frame >= start) {
-            if (!char || Math.random() < 0.28) {
-              char = this.randomChar();
-              this.queue[i].char = char;
-            }
-            output += `<span class="dud">${char}</span>`;
-          } else {
-            output += from;
-          }
-        }
-
-        this.el.innerHTML = output;
-
-        if (complete === this.queue.length) {
-          this.resolve();
-        } else {
-          this.frameRequest = requestAnimationFrame(this.update);
-          this.frame++;
-        }
-      }
-
-      randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
-      }
-    }
-
-    if (textRef.current) {
-      const scramble = new TextScramble(textRef.current);
-      scramble.setText("The Sticky Card Showcase");
-
-      const interval = setInterval(() => {
-        scramble.setText("The Sticky Card Showcase");
-      }, 5000);
-
-      return () => clearInterval(interval);
-    }
-  }, []);
 
   const HomeCards = [
     { id: 1, component: <HomeCard1 /> },
@@ -744,7 +672,7 @@ const Animation = () => {
             className="iceberg-regular text-white text-xl w-full uppercase border-t border-b border-white/20 p-3  
         bg-gradient-to-r from-black via-[#0D0D0D] to-black mx-auto text-center"
           >
-            <h2 ref={textRef} className=" text-white mx-auto text-center ">
+            <h2 className=" text-white mx-auto text-center ">
               The Sticky Card Showcase
             </h2>
           </div>

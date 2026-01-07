@@ -220,8 +220,8 @@ const Hero = () => {
     if (!showModal) return null;
 
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded max-w-md w-full mx-auto">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate-fadeIn">
+        <div className="bg-white rounded max-w-md w-full mx-auto animate-slideUp shadow-2xl">
           <div className="flex justify-between items-center p-6 border-b">
             <h2 className="text-xl font-bold text-gray-800">
               Schedule Appointment
@@ -276,7 +276,8 @@ const Hero = () => {
                     min={getMinDate()}
                     max={getMaxDate()}
                     aria-label="Select appointment date"
-                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#ff8402] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#ff8402] focus:border-transparent text-gray-800 bg-white"
+                    style={{ colorScheme: 'light' }}
                     required
                   />
                 </div>

@@ -8,8 +8,6 @@ import bKash from "../../../assets/payment/bkash.png";
 import Nagad from "../../../assets/payment/Nagad.png";
 import Rocket from "../../../assets/payment/Rocket.png";
 import Upay from "../../../assets/payment/Upay.png";
-import Visa from "../../../assets/payment/Visa.png";
-import Mastercard from "../../../assets/payment/Mastercard.png";
 
 import {
   FaFacebookF,
@@ -73,7 +71,7 @@ const Footer = () => {
     { name: "Customer Support", path: "/contact-us" },
   ];
 
-  const paymentMethods = [bKash, Nagad, Rocket, Upay, Visa, Mastercard];
+  const paymentMethods = [bKash, Nagad, Rocket, Upay];
 
   const handleSocialClick = (url, label) => {
     console.log(`Opening ${label}: ${url}`);
@@ -98,12 +96,12 @@ const Footer = () => {
           <div className="flex items-center gap-2 md:gap-3 w-full justify-start">
             <RiCustomerService2Fill className="text-[#d87205] text-5xl md:text-7xl flex-shrink-0" />
             <span className="text-black text-lg text-left gap-1">
-              Sales (10AM - 8PM) <br />
+              Sales (11AM - 8PM) <br />
               <a
-                href="tel:+8801711894488"
+                href="tel:01300981501"
                 className="hover:text-blue-600 transition-colors text-lg md:text-xl"
               >
-                09649-888833
+                01300981501
               </a>
             </span>
           </div>
@@ -134,12 +132,12 @@ const Footer = () => {
           <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto justify-center md:justify-start">
             <RiCustomerService2Fill className="text-black text-3xl md:text-4xl flex-shrink-0" />
             <span className="text-base md:text-lg text-center md:text-left">
-              Sales (10AM - 8PM): <br />
+              Sales (11AM - 8PM): <br />
               <a
-                href="tel:+8801711894488"
+                href="tel:01300981501"
                 className="font-semibold hover:text-blue-600 transition-colors text-lg md:text-xl"
               >
-                +8801711894488
+                01300981501
               </a>
             </span>
           </div>
@@ -213,7 +211,7 @@ const Footer = () => {
                 <h1 className={titleStyle}>We Accept</h1>
 
                 {/* Mobile */}
-                <div className="grid grid-cols-6 border border-gray-600 md:hidden mt-4 mb-4.5">
+                <div className="grid grid-cols-4 border border-gray-600 md:hidden mt-4 mb-4.5">
                   {paymentMethods.map((method, index) => (
                     <div
                       key={index}
@@ -232,7 +230,7 @@ const Footer = () => {
                 </div>
 
                 {/* md and above */}
-                <div className="hidden md:grid grid-cols-6 border border-gray-600 mt-4 mb-4.5 px-1">
+                <div className="hidden md:grid grid-cols-4 border border-gray-600 mt-4 mb-4.5 px-1">
                   {paymentMethods.map((method, index) => (
                     <div
                       key={`md-${index}`}
@@ -292,16 +290,10 @@ const Footer = () => {
                   </div>
                   <p className="text-sm ">
                     <a
-                      href="tel:09649888833"
-                      className="hover:text-white transition-colors mr-2"
-                    >
-                      09649-888833 ,
-                    </a>
-                    <a
-                      href="tel:+8801711894488"
+                      href="tel:01300981501"
                       className="hover:text-white transition-colors"
                     >
-                      01711-894488
+                      01300981501
                     </a>
                   </p>
                 </div>
@@ -313,16 +305,10 @@ const Footer = () => {
                   </div>
                   <p className="text-sm md:text-sm">
                     <a
-                      href="mailto:info@hilnex.com"
-                      className="hover:text-white transition-colors mr-2"
-                    >
-                      info@hilnex.com ,
-                    </a>
-                    <a
-                      href="mailto:hilnex@yahoo.com"
+                      href="mailto:mdrakibhossencse@gmail.com"
                       className="hover:text-white transition-colors"
                     >
-                      hilnex@yahoo.com
+                      mdrakibhossencse@gmail.com
                     </a>
                   </p>
                 </div>
