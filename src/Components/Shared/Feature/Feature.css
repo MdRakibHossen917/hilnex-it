@@ -1,0 +1,59 @@
+.features-area {
+  position: relative;
+  width: 100%;
+  height: 1150px;
+  margin-top: 1000px;
+}
+
+.bg-columns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.column {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+}
+
+.light {
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1)
+  );
+
+  animation: lightMove 5s linear infinite;
+}
+
+.column:nth-child(2) .light {
+  animation-delay: 0.5s;
+}
+.column:nth-child(3) .light {
+  animation-delay: 1s;
+}
+.column:nth-child(4) .light {
+  animation-delay: 1.5s;
+}
+.column:nth-child(5) .light {
+  animation-delay: 2s;
+}
+
+@keyframes lightMove {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 100%;
+  }
+}

@@ -1,0 +1,541 @@
+/* Dashboard Home Styles */
+.dashboard-home {
+  padding: 0;
+}
+
+.widgets-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Enhanced Widget Cards */
+.widget-card {
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+  border-radius: 26px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 132, 2, 0.15);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.widget-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff8402, transparent);
+}
+
+.widget-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 25px 50px rgba(255, 132, 2, 0.15),
+    0 0 0 1px rgba(255, 132, 2, 0.2);
+  border-color: rgba(255, 132, 2, 0.3);
+}
+
+/* Widget Header */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.widget-title-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+}
+
+.widget-subtitle {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.widget-icon-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 132, 2, 0.1);
+  border: 1px solid rgba(255, 132, 2, 0.2);
+}
+
+.widget-icon {
+  color: #ff8402;
+  font-size: 1.5rem;
+}
+
+/* Project Overview Widget */
+.project-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-stat {
+  text-align: center;
+}
+
+.stat-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stat-badge:hover {
+  transform: scale(1.1);
+}
+
+.stat-badge.active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), transparent);
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.stat-badge.complete {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), transparent);
+  border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.stat-badge.pending {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), transparent);
+  border: 2px solid rgba(245, 158, 11, 0.3);
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #b0b0b0;
+  font-weight: 600;
+}
+
+.progress-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.progress-percent {
+  background: linear-gradient(45deg, #ff8402, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8402, #ffb347);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Clients Widget */
+.client-main-stat {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.client-total {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #10b981, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.client-label {
+  color: #b0b0b0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.client-growth {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.growth-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.growth-icon {
+  font-size: 1rem;
+}
+
+.growth-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 50px;
+}
+
+.growth-bar {
+  width: 6px;
+  background: linear-gradient(to top, #10b981, #00ff88);
+  border-radius: 3px 3px 0 0;
+  transition: all 0.3s ease;
+}
+
+.growth-bar:hover {
+  background: linear-gradient(to top, #00ff88, #80ffc2);
+}
+
+/* Revenue Widget */
+.revenue-stats {
+  margin-bottom: 2rem;
+}
+
+.revenue-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.revenue-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(8px);
+}
+
+.revenue-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.revenue-item.paid .revenue-dot {
+  background: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.revenue-item.pending .revenue-dot {
+  background: #f59e0b;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+.revenue-info {
+  flex: 1;
+}
+
+.revenue-label {
+  display: block;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.revenue-amount {
+  display: block;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.revenue-item.paid .revenue-amount {
+  color: #00ff88;
+}
+
+.revenue-item.pending .revenue-amount {
+  color: #f59e0b;
+}
+
+.revenue-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.total-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-label {
+  color: #b0b0b0;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.total-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.revenue-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 10px;
+  color: #00ff88;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Traffic Widget */
+.traffic-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.traffic-stats {
+  text-align: left;
+}
+
+.traffic-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.traffic-label {
+  color: #b0b0b0;
+  font-weight: 600;
+}
+
+.traffic-trend {
+  text-align: right;
+}
+
+.trend-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+  color: #a78bfa;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.trend-badge.positive {
+  color: #00ff88;
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.trend-label {
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}
+
+.traffic-chart {
+  margin-bottom: 1.5rem;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 120px;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.chart-bar {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.chart-bar-fill {
+  width: 100%;
+  background: linear-gradient(to top, #8b5cf6, #a78bfa);
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.chart-bar:hover .chart-bar-fill {
+  background: linear-gradient(to top, #a78bfa, #c4b5fd);
+  transform: scaleY(1.1);
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.traffic-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+  font-weight: 600;
+  flex: 1;
+  justify-content: center;
+}
+
+.metric-icon {
+  color: #ff8402;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Floating Animation */
+.widget-card:nth-child(odd) {
+  animation: float 6s ease-in-out infinite;
+}
+
+.widget-card:nth-child(even) {
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .widgets-grid-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .widgets-grid-main {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .client-growth {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .traffic-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .revenue-total {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .traffic-metrics {
+    flex-direction: column;
+  }
+}

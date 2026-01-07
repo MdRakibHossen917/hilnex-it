@@ -1,0 +1,228 @@
+/* .workflow-mobile-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #282828;
+  padding: 5px 0;
+} */
+
+.workflow-mobile-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828; /* base background */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px; /* spacing between red dots */
+  background-repeat: repeat;
+  background-position: center;
+  padding: 5px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.workflow-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 0px;
+  
+}
+
+.workflow-timeline {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+}
+
+.timeline-outer {
+  position: relative;
+}
+
+.timeline-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left by default */
+}
+
+.timeline-card.odd {
+  padding: 30px 0 30px 30px;
+  text-align: left;
+}
+/* Push even cards (2, 4, 6) to right */
+.timeline-card.even {
+  justify-content: flex-end;
+}
+
+.timeline-slno {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 2;
+  border:2px solid rgb(34, 33, 33);
+}
+
+.timeline-card.even .timeline-slno {
+  right: 0;
+  left: auto;
+  transform: translate(50%, -50%);
+}
+
+.timeline-slno i {
+  font-size: 18px;
+  
+}
+.timeline-slno svg {
+  font-size: 22px;
+}
+
+.timeline-info {
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(240, 239, 239); */
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(51, 50, 50, 0.1);
+}
+
+.timeline-card.odd .timeline-info {
+  margin-left: 25px;
+}
+
+.timeline-card.even .timeline-info {
+  margin-right: 25px;
+}
+
+.timeline-title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.timeline-description p {
+  color: #d32e2e;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+  
+}
+
+/* Timeline line */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: 1px dotted #b9b3b3;  
+  z-index: 1;
+}
+.timeline-card.odd::before {
+  left: 0px;
+  top: -5px;
+  bottom: -5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 20px 0 0 20px;
+}
+
+.timeline-card.even::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 20px 20px 0;
+}
+
+.timeline-card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+  height: 50%;
+  top: auto;
+}
+
+.timeline-card:last-child::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  height: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-card.odd {
+    text-align: left;
+    padding: 20px 0;
+  }
+
+  .timeline-card.even {
+    text-align: right;
+    padding: 20px 0;
+  }
+
+  /* Slno circle position */
+  .timeline-card.odd .timeline-slno {
+    left: 0;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .timeline-card.even .timeline-slno {
+    right: 0;
+    left: auto;
+    transform: translate(50%, -50%);
+  }
+
+  /* Info box margin for zig-zag */
+  .timeline-card.odd .timeline-info {
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .timeline-card.even .timeline-info {
+    margin-left: 0;
+    margin-right: 60px;
+    text-align: right;
+  }
+
+  .timeline-info {
+    padding: 15px;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .timeline-slno {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .timeline-slno i {
+    font-size: 16px;
+  }
+  
+  .timeline-card.odd .timeline-info,
+  .timeline-card.even .timeline-info {
+    margin-right: 10px;
+    margin-left: 10px;
+
+  }
+}
+

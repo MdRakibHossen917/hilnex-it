@@ -1,0 +1,18 @@
+/* Dimmed icons initially */
+.icon-dim {
+  opacity: 0.3;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Glowing icons */
+@keyframes glowPulse {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+.icon-glow {
+  animation: glowPulse 2s ease-in-out forwards;
+  text-shadow: 0 0 12px #fff, 0 0 24px #fff;
+}

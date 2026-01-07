@@ -1,0 +1,102 @@
+.features-area {
+  position: relative;
+  padding: 100px 20px;
+  background: #0f0f0f;
+  color: white;
+  overflow: hidden;
+}
+
+/* Section Title */
+.section-title h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.sub-title {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Feature Cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+.col {
+  flex: 0 0 250px;
+}
+.single-features-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s forwards;
+}
+.single-features-box:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+.single-features-box img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Background Columns ===== */
+.bg-columns {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.column {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+.light {
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 20%;
+   background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),   /* thick bright top */
+    rgba(255, 255, 255, 0.5), /* semi-transparent middle */
+    rgba(255, 255, 255, 1)    /* thin/fade bottom */
+  );
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+
+  animation: lightMove 2s linear infinite;
+}
+
+.column:nth-child(2) .light { animation-delay: 0.5s; }
+.column:nth-child(3) .light { animation-delay: 1s; }
+.column:nth-child(4) .light { animation-delay: 1.5s; }
+.column:nth-child(5) .light { animation-delay: 2s; }
+
+@keyframes lightMove {
+  0% { top: -50%; }
+  100% { top: 100%; }
+}
+
+/* Feature content above background */
+.features-area .container {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,9 @@
+.features-area {
+  position: relative;
+  width: 100%;
+  height: 2000px; /* height for light streak animation */
+  margin-top: 0;   /* remove any margin */
+  padding-top: 0;  /* optional */
+}
+
+

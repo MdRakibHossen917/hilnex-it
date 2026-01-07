@@ -1,0 +1,35 @@
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scrollRight 40s linear infinite;
+}
+
+.scroller:hover .animate-scroll-left,
+.scroller:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
+
+.scroller {
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent 100%);
+}

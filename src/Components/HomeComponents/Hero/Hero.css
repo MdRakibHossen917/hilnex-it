@@ -1,41 +1,36 @@
-/* ================== NEON BUTTON ================== */
-
-/* Neon button base styles */
 .neon-btn {
   position: relative;
   overflow: hidden;
   transition: 0.5s;
-  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark bg */
-  backdrop-filter: blur(10px);    /* blur effect behind button */
+  background: rgba(0, 0, 0, 0.4);  
+  backdrop-filter: blur(10px);    
 }
 
-/* Hover effect for neon button */
 .neon-btn:hover {
-  background: #ff8402;            /* neon orange bg on hover */
-  color: #050801;                 /* dark text color on hover */
+  background: #ff8402;            
+  color: #050801;              
   box-shadow: 0 0 8px rgba(255, 132, 2, 0.6),
               0 0 20px rgba(255, 132, 2, 0.4),
-              0 0 35px rgba(255, 132, 2, 0.3); /* glow effect */
+              0 0 35px rgba(255, 132, 2, 0.3);
 }
 
-/* Span elements inside button for animated borders */
+
 .neon-btn span {
   position: absolute;
   display: block;
-  animation-play-state: running; /* start animation by default */
+  pointer-events: none;  
+  animation-play-state: running;
 }
 
-/* Top border animation */
 .neon-btn span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ffffff); /* gradient line */
-  animation: btn-anim1 0.5s linear infinite; /* keyframes */
+  background: linear-gradient(90deg, transparent, #ffffff);
+  animation: btn-anim1 0.5s linear infinite;
 }
 
-/* Right border animation */
 .neon-btn span:nth-child(2) {
   top: -100%;
   right: 0;
@@ -43,10 +38,9 @@
   height: 100%;
   background: linear-gradient(180deg, transparent, #ffffff);
   animation: btn-anim2 0.5s linear infinite;
-  animation-delay: 0.15s; /* delay for stagger effect */
+  animation-delay: 0.15s;
 }
 
-/* Bottom border animation */
 .neon-btn span:nth-child(3) {
   bottom: 0;
   right: -100%;
@@ -68,43 +62,140 @@
   animation-delay: 0.45s;
 }
 
-/* Pause border animations on hover */
 .neon-btn:hover span {
   animation-play-state: paused;
 }
 
-/* Keyframes for animated borders */
-
-/* Top border moves left to right */
 @keyframes btn-anim1 {
   0% { left: -100%; }
   50%, 100% { left: 100%; }
 }
 
-/* Right border moves top to bottom */
 @keyframes btn-anim2 {
   0% { top: -100%; }
   50%, 100% { top: 100%; }
 }
 
-/* Bottom border moves right to left */
 @keyframes btn-anim3 {
   0% { right: -100%; }
   50%, 100% { right: 100%; }
 }
 
-/* Left border moves bottom to top */
 @keyframes btn-anim4 {
   0% { bottom: -100%; }
   50%, 100% { bottom: 100%; }
 }
 
-/* ================== MARQUEE SPAN ================== */
+/* ===================== MARQUEE TEXT ===================== */
+/* ===================== MARQUEE TEXT ===================== */
+.marquee-wrapper1 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(to right, #000000, #181818, #000000);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-/* Background and style for marquee text */
-.marquee-span {
-  background: rgba(0, 0, 0, 0.4); /* semi-transparent background */
-  backdrop-filter: blur(5px);   /* frosted glass effect */
-  padding: 0.25rem 0.5rem;     /* padding around text */
-  border-radius: 0.25rem;       /* rounded corners */
+.marquee-container {
+  display: flex;
+  width: fit-content;
+}
+
+.marquee-text {
+  display: flex;
+  white-space: nowrap;
+  padding: 0px 0;
+  animation: marquee 180s linear infinite;
+}
+
+.marquee-text span {
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.4px #e0e2e4;
+  font-family: "Urbanist", sans-serif;
+  margin-right: 4rem;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.breaking-news {
+  background: linear-gradient(to right, #000000, #181818, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  margin-right: 2rem;
+  padding: 0px 0px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.breaking-news::before {
+  margin-right: 8px;
+  font-size: 0.5em;
+}
+
+/* Responsive font sizes */
+@media (min-width: 1024px) {
+  .marquee-text span { font-size: 2rem; }
+}
+@media (min-width: 1280px) {
+  .marquee-text span { font-size: 2.2rem; }
+}
+@media (min-width: 1536px) {
+  .marquee-text span { font-size: 2.5rem; }
+}
+
+/* === For medium screens only (md: 768px–1023px) === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .marquee-text {
+    padding: 0.4rem 0;  
+  }
+  .marquee-text span {
+    margin-right: 3rem;
+    font-size: 1.8rem;
+  }
+  .breaking-news {
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .marquee-text { animation-duration: 220s; }
+  .marquee-text span { margin-right: 2rem; font-size: 2rem; }
+  .breaking-news { margin-right: 1rem; font-size: 1.2rem; }
+}
+
+/* Smooth infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.marquee-text:hover {
+  animation-play-state: paused;
+}
+
+.marquee-text.restart {
+  animation: marquee 30s linear infinite;
+}
+
+/* Hero Title - Ensure 3 lines on all devices */
+.hero-title-line {
+  display: block;
+  line-height: 1.2;
+  word-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .hero-title-line {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+  }
 }

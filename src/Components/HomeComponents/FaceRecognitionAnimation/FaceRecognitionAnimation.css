@@ -1,0 +1,49 @@
+/* AnimatedHeading.css */
+.animated-heading {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* space between words */
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff; /* text outline */
+}
+
+.word {
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 0.4px #e7e5e5;
+  overflow: hidden;
+}
+
+.word::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  width: 0%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-text-stroke: 0;
+  animation: fillCycle 6s ease-in-out infinite;
+}
+
+@keyframes fillCycle {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+ 
+/* Show only on mobile */
+@media (max-width: 1023px) {
+  .relative.z-20.w-full.flex.flex-col.justify-center.items-center.mt-6.space-y-6.px-4 {
+    display: flex;
+  }
+}

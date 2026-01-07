@@ -1,0 +1,90 @@
+/* Base (mobile first) */
+.glob-map-section {
+  position: relative;
+  width: 100%;
+  height: 250px;  
+  background-color: #282828;
+  /* background-image: radial-gradient(#353434 1px, transparent 1px); */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  
+}
+
+.glob-map-text {
+  z-index: 10;
+  color: white;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+   width: 100%;
+}
+
+.glob-map-content {
+  width: 100%;
+  flex-grow: 1;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Small devices (sm ≥ 640px) */
+@media (min-width: 640px) {
+  .glob-map-section {
+    height: 300px;
+     
+  }
+  .glob-map-text {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* Medium devices (md ≥ 768px) */
+@media (min-width: 768px) {
+  .glob-map-section {
+    height: 400px;
+    
+  }
+  .glob-map-text {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Large devices (lg ≥ 1024px) */
+@media (min-width: 1024px) {
+  .glob-map-section {
+    height: 400px;
+   
+  }
+  .glob-map-text {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Extra Large devices (xl ≥ 1280px) */
+@media (min-width: 1280px) {
+  .glob-map-section {
+    height: 500px;
+   
+  }
+  .glob-map-text {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* 2XL devices (2xl ≥ 1536px) */
+@media (min-width: 1536px) {
+  .glob-map-section {
+    height: 600px;
+ 
+  }
+  .glob-map-text {
+    margin-bottom: 1.5rem;
+  }
+}
+
+ 
