@@ -1,313 +1,39 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import CellEffect from "../../CellEffect/CellEffect";
 import Feature from "../../Shared/Feature/Feature";
-import WireframeImage from "../../../assets/AnimationPage/Wireframe.webp";
-import FinalUIImage from "../../../assets/AnimationPage/Final UI.webp";
-import RowImage from "../../../assets/AnimationPage/row.webp";
-import Row1Image from "../../../assets/AnimationPage/row1.webp";
 
-const HomeCard1 = () => {
+const Card1 = () => {
   return (
     <div
-      className="main-container flex   w-full p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      className="w-full p-6 md:p-8 rounded-lg"
       style={{
         border: "1px solid #343435",
         background: "rgba(26, 26, 26, 0.5)",
-        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20#3a3a3a33.2)",
-        backdropFilter: "blur(20px)",
-      }}
-    >
-      <div className="col-span-1 md:col-span-2 lg:col-span-3">
-        <h1 className="text-2xl md:text-5xl  font-bold text-white mb-2 leading-tight text-white/85">
-          Professional & Clean Style
-        </h1>
-        <p className="text-gray-400 text-lg mb-2">
-          Empower Your Business with Smart IT Solutions Transform your digital
-          presence with our expert team in Web, Software, App, and Branding. We
-          build powerful technology that drives growth and success.
-        </p>
-        <p className="text-gray-500 text-sm mb-2  ">
-          Let’s build something great together.
-        </p>
-
-        <a
-          href="#"
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-        >
-          Explore with Opal AI
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 ml-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </a>
-      </div>
-
-      <div className="col-span-1 md:col-span-2 lg:col-span-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div
-          className="bg-gray-900 rounded p-6 shadow-xl relative main-container"
-          style={{
-              border: "1px solid #343435",
-            background: "rgba(36, 36, 37, 0.5)",
-            boxShadow:
-              "0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(10px)",
-          }}
-        >
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center">
-              <div className="text-sm text-white/90">
-              <h3 className="font-semibold">Hi, I'm Tohofa. What can I help you?</h3>
-              </div>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="flex justify-end">
-              <div
-                className="p-4 rounded max-w-md"
-                style={{
-                  background: "rgba(60, 60, 63, 0.5)",
-                  border: "1px solid #343435",
-                }}
-              >
-                <p className="text-sm text-white/60">
-                  Help me create a campaign schedule using this month's
-                  marketing calendar.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div
-                className="p-4 rounded max-w-md"
-                style={{
-                  background: "rgba(96, 96, 97, 0.5)",
-                    border: "1px solid #343435",
-                }}
-              >
-                <p className="text-sm text-white/60">
-                  Great! I've spun up a detailed schedule for you. Based on
-                  data, it looks like you can optimize and increase engagement.
-                </p>
-              </div>
-              <div className="flex items-center ml-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-purple-500"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className="bg-gray-900 rounded p-6 shadow-xl relative overflow-hidden main-container grid grid-cols-1 md:grid-cols-2 gap-8  hidden md:block"
-          style={{
-            border: "1px solid #343435",
-            background: "rgba(56, 56, 57, 0.5)",
-            boxShadow:
-              "0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(10px)",
-          }}
-        >
-          <div className="flex flex-col justify-between">
-            <div>
-              <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">
-                Modern & Techy Feel
-              </h2>
-              <p className="text-gray-400 text-sm">
-                As a marketer and creator, start using 'data-driven' marketing
-                and want to see your team scale campaigns and content while
-                delivering real ROI.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-between">
-            <img
-              className="rounded-full h-32 w-32 object-cover mb-4 border border-gray-700"
-              src="https://placehold.co/200x200/2d2f44/e0e0e0?text=User+Photo"
-              alt="Placeholder image of a user"
-            />
-            <div className="text-center">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-gray-300 mb-2">
-                35%
-              </h2>
-              <p className="text-gray-500 text-sm">Increase in test impact</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const HomeCard2 = () => {
-  return (
-    <div
-      className="main-container w-full p-4 md:p-8 grid grid-cols-1 gap-8"
-      style={{
-          border: "1px solid #343435",
-        background: "rgba(26, 26, 26, 0.5)",
-        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20#3a3a3a33.2)",
+        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(20px)",
       }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight text-white/85">
-            Content and experiences
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            Transform Your Digital Presence
           </h1>
           <p className="text-gray-400 text-lg mb-4">
-            Accelerate the entire content supply chain
-          </p>
-          <p className="text-gray-500 text-sm mb-4">
-            Plan, create, and publish high-quality experiences with AI-powered
-            tools fit for you. Generate on-brand content, automate tedious
-            tasks, and impress every customer.
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            Discover Content Orchestration
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
-        </div>
-
-        <div className="flex flex-col  border  border-[#343435] bg-[#1a1a1a] p-4 rounded">
-          <h2 className="text-xl font-bold mb-1 text-white">Visual builder</h2>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded overflow-hidden shadow-lg">
-              <img
-                src={WireframeImage}
-                alt="Wireframe"
-                className="w-full h-auto"
-              />
-            </div>
-
-            <div className="rounded overflow-hidden shadow-lg">
-              <img
-                src={FinalUIImage}
-                alt="Final UI"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-1">
-        <div className=" border  border-[#343435]  bg-[#1a1a1a] rounded p-4 shadow-lg">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Next level website
-          </h2>
-          <p className="text-gray-400 text-sm mb-2">
-            Being a <span className="text-white font-bold">digital leader</span>
-            . I want to deliver better customer experiences, drive more
-            conversions, and optimize my website.
-          </p>
-        </div>
-
-        <div className="border  border-[#343435] bg-[#1a1a1a] rounded p-4 shadow-lg hidden md:block">
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Valtech
-            <span className="text-yellow-400 ml-2">★</span>
-          </h2>
-          <p className="text-gray-400 text-sm">
-            How Valtech empowers marketing teams across the globe
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            Read customer story
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
-        </div>
-
-        <div className="hidden md:flex border  border-[#343435] bg-[#1a1a1a] rounded p-6 shadow-lg flex-col justify-center items-center text-center hidden md:flex">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-2">
-            100%
-          </h2>
-          <p className="text-gray-500 text-sm">boost in website engagement</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const HomeCard3 = () => {
-  return (
-    <div
-      className="main-container w-full p-4 md:p-8 grid grid-cols-1 gap-8"
-      style={{
-        border: "1px solid #343435",  
-         background: "rgba(26, 26, 26, 0.5)",
-        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20#3a3a3a33.2)",
-        backdropFilter: "blur(20px)",
-      }}
-    >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight text-white/85">
-            Test, personalize, and analyze: good things come in threes
-          </h1>
-          <p className="text-gray-400 text-lg mb-6">
-            Create meaningful 1:1 interactions, every time
+            We deliver cutting-edge web, software, and mobile app development solutions 
+            that drive business growth and success.
           </p>
           <p className="text-gray-500 text-sm mb-6">
-            Combine the world's best experimentation platform, AI-driven
-            personalization, and warehouse-native analytics. What do you get?
-            Measurable business impact.
+            Our expert team combines creativity with technology to build powerful 
+            digital experiences tailored to your business needs.
           </p>
           <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+            href="#contact"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors font-semibold"
           >
-            Optimize with Digital Optimization
+            Get Started Today
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
+              className="h-5 w-5 ml-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -321,288 +47,279 @@ const HomeCard3 = () => {
             </svg>
           </a>
         </div>
-
-        <div className="flex flex-col">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="flex items-center justify-center">
+          <div className="grid grid-cols-2 gap-4 w-full">
             <div
-              className="rounded p-4 shadow-lg"
+              className="rounded-lg p-6 text-center"
               style={{
                 border: "1px solid #343435",
-                backgroundColor: "#1a1a1a",
+                backgroundColor: "rgba(36, 36, 37, 0.5)",
               }}
             >
-              <h3 className="text-sm font-semibold mb-2 text-white">
-                Experiment
-              </h3>
-              <p className="text-xs text-gray-400 mb-4">
-                Glossary bounce rates decrease with more visuals
-              </p>
-              <p className="text-xs font-semibold text-green-500 mb-2">
-                A/B TEST &bull; ACTIVE
-              </p>
-              <p className="text-xs text-gray-500 mb-2">Threshold</p>
-              <div className="relative h-1 w-full bg-gray-700 rounded mb-2">
-                <div
-                  className="absolute top-0 left-0 h-1 bg-gray-500 rounded"
-                  style={{ width: "95%" }}
-                ></div>
-                <div className="absolute top-0 left-1/2 h-4 w-4 -mt-1.5 transform -translate-x-1/2 rounded-full bg-gray-700"></div>
-              </div>
-              <p className="text-xs text-gray-400 mt-3">
-                Variation: All variations
-              </p>
+              <div className="text-4xl font-bold text-[#ff8402] mb-2">500+</div>
+              <div className="text-gray-400 text-sm">Projects Delivered</div>
             </div>
             <div
-              className="rounded p-4 shadow-lg"
+              className="rounded-lg p-6 text-center"
               style={{
-                  border: "1px solid #343435",
-                backgroundColor: "#1a1a1a",
+                border: "1px solid #343435",
+                backgroundColor: "rgba(36, 36, 37, 0.5)",
               }}
             >
-              <h3 className="text-sm font-semibold mb-2 text-white">Results</h3>
-              <p className="text-xs text-gray-500 mb-4">Conversion rate</p>
-              <div className="flex items-center justify-between text-xs mb-2">
-                <span>Original</span>
-                <span>4.45%</span>
-              </div>
-              <div className="flex items-center justify-between text-xs mb-2">
-                <span className="text-green-500">Variation #1</span>
-                <span className="text-green-500">5.18%</span>
-              </div>
-              <img
-                src={RowImage}
-                alt="Chart"
-                className="w-full h-auto"
-              />
+              <div className="text-4xl font-bold text-[#ff8402] mb-2">300+</div>
+              <div className="text-gray-400 text-sm">Happy Clients</div>
+            </div>
+            <div
+              className="rounded-lg p-6 text-center"
+              style={{
+                border: "1px solid #343435",
+                backgroundColor: "rgba(36, 36, 37, 0.5)",
+              }}
+            >
+              <div className="text-4xl font-bold text-[#ff8402] mb-2">50+</div>
+              <div className="text-gray-400 text-sm">Expert Team</div>
+            </div>
+            <div
+              className="rounded-lg p-6 text-center"
+              style={{
+                border: "1px solid #343435",
+                backgroundColor: "rgba(36, 36, 37, 0.5)",
+              }}
+            >
+              <div className="text-4xl font-bold text-[#ff8402] mb-2">10+</div>
+              <div className="text-gray-400 text-sm">Years Experience</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
-        <div
-          className="rounded  p-6 shadow-lg flex flex-col justify-center items-center text-center hidden md:flex "
-          style={{    border: "1px solid #343435", backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white 2">
-            12%
-          </h2>
-          <p className="text-gray-500 text-sm">
-            of ideas are proven to be winners
-          </p>
-        </div>
-
-        <div
-          className="rounded p-4 shadow-lg"
-          style={{ backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-xl font-semibold text-white  ">
-            Code smarter, not harder
-          </h2>
-          <p className="text-gray-400 text-sm">
-            As a{" "}
-            <span className="text-white font-bold">developer and engineer</span>
-            , I want tools that make testing and experience creation a breeze.
-          </p>
-        </div>
-
-        <div
-          className="rounded p-6 shadow-lg hidden md:flex"
-          style={{ border: "1px solid #343435", backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Calendly
-            <span className="text-yellow-400 ml-2">★</span>
-          </h2>
-          <p className="text-gray-400 text-sm mb-4">
-            Crafting personalized experiences for 20 million users
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            Read customer story
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </div>
   );
 };
 
-const HomeCard4 = () => {
+const Card2 = () => {
   return (
     <div
-      className="main-container w-full p-4 md:p-8 grid grid-cols-1 gap-8 "
+      className="w-full p-6 md:p-8 rounded-lg"
       style={{
-           border: "1px solid #343435",
+        border: "1px solid #343435",
         background: "rgba(26, 26, 26, 0.5)",
-        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20#3a3a3a33.2)",
+        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
         backdropFilter: "blur(20px)",
       }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight text-white/85">
-            Test, personalize, and analyze: good things come in threes
-          </h1>
-          <p className="text-gray-400 text-lg mb-6">
-            Create meaningful 1:1 interactions, every time
-          </p>
-          <p className="text-gray-500 text-sm mb-6">
-            Combine the world's best experimentation platform, AI-driven
-            personalization, and warehouse-native analytics. What do you get?
-            Measurable business impact.
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Our Core Services
+        </h2>
+        <p className="text-gray-400 text-lg">
+          Comprehensive IT solutions to elevate your business
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: "Web Development",
+            description: "Custom websites and web applications built with latest technologies",
+            icon: "🌐"
+          },
+          {
+            title: "Software Development",
+            description: "Enterprise software solutions tailored to your business needs",
+            icon: "💻"
+          },
+          {
+            title: "Mobile App Development",
+            description: "Native and cross-platform mobile applications for iOS and Android",
+            icon: "📱"
+          },
+          {
+            title: "Digital Marketing",
+            description: "Data-driven marketing strategies to boost your online presence",
+            icon: "📈"
+          },
+          {
+            title: "Graphics Design",
+            description: "Creative designs that make your brand stand out",
+            icon: "🎨"
+          },
+          {
+            title: "IT Consultancy",
+            description: "Expert guidance to optimize your IT infrastructure and strategy",
+            icon: "💡"
+          }
+        ].map((service, index) => (
+          <div
+            key={index}
+            className="p-6 rounded-lg"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
           >
-            Optimize with Digital Optimization
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
-        </div>
+            <div className="text-4xl mb-4">{service.icon}</div>
+            <h3 className="text-xl font-semibold text-white mb-2">
+              {service.title}
+            </h3>
+            <p className="text-gray-400 text-sm">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-        <div className="flex flex-col">
-          <div className="grid grid-cols-2 gap-4">
-            <div
-              className="rounded p-4 shadow-lg"
-              style={{
-                 border: "1px solid #343435",
-                backgroundColor: "#1a1a1a",
-              }}
-            >
-              <h3 className="text-sm font-semibold mb-2 text-white">
-                Experiment
-              </h3>
-              <p className="text-xs text-gray-400 mb-4">
-                Glossary bounce rates decrease with more visuals
-              </p>
-              <p className="text-xs font-semibold text-green-500 mb-2">
-                A/B TEST &bull; ACTIVE
-              </p>
-              <p className="text-xs text-gray-500 mb-2">Threshold</p>
-              <div className="relative h-1 w-full bg-gray-700 rounded mb-2">
-                <div
-                  className="absolute top-0 left-0 h-1 bg-gray-500 rounded"
-                  style={{ width: "95%" }}
-                ></div>
-                <div className="absolute top-0 left-1/2 h-4 w-4 -mt-1.5 transform -translate-x-1/2 rounded-full bg-gray-700"></div>
+const Card3 = () => {
+  return (
+    <div
+      className="w-full p-6 md:p-8 rounded-lg"
+      style={{
+        border: "1px solid #343435",
+        background: "rgba(26, 26, 26, 0.5)",
+        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
+        backdropFilter: "blur(20px)",
+      }}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Why Choose Hilnex?
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                title: "Expert Team",
+                description: "Highly skilled professionals with years of industry experience"
+              },
+              {
+                title: "Cutting-Edge Technology",
+                description: "We use the latest tools and frameworks to deliver top-quality solutions"
+              },
+              {
+                title: "Client-Centric Approach",
+                description: "Your success is our priority. We work closely with you every step of the way"
+              },
+              {
+                title: "Proven Track Record",
+                description: "Successfully completed 500+ projects with satisfied clients worldwide"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <div className="flex-shrink-0 mt-1">
+                  <svg
+                    className="w-6 h-6 text-[#ff8402]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs text-gray-400 mt-3">
-                Variation: All variations
-              </p>
-            </div>
-            <div
-              className="rounded p-4 shadow-lg"
-              style={{
-                
-                  border: "1px solid #343435", backgroundColor: "#1a1a1a",
-              }}
-            >
-              <h3 className="text-sm font-semibold mb-2 text-white">Results</h3>
-              <p className="text-xs text-gray-500 mb-4">Conversion rate</p>
-              <div className="flex items-center justify-between text-xs mb-2">
-                <span>Original</span>
-                <span>4.45%</span>
-              </div>
-              <div className="flex items-center justify-between text-xs mb-4">
-                <span className="text-green-500">Variation #1</span>
-                <span className="text-green-500">5.18%</span>
-              </div>
-              <img
-                src={Row1Image}
-                alt="OMG"
-                className="w-full h-auto"
-              />
-            </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <div
+            className="p-6 rounded-lg"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
+          >
+            <div className="text-5xl font-bold text-[#ff8402] mb-2">98%</div>
+            <div className="text-gray-400">Client Satisfaction Rate</div>
+          </div>
+          <div
+            className="p-6 rounded-lg"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
+          >
+            <div className="text-5xl font-bold text-[#ff8402] mb-2">24/7</div>
+            <div className="text-gray-400">Support Available</div>
+          </div>
+          <div
+            className="p-6 rounded-lg"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
+          >
+            <div className="text-5xl font-bold text-[#ff8402] mb-2">100+</div>
+            <div className="text-gray-400">Technologies Mastered</div>
           </div>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  ">
-        <div
-          className="rounded p-6 shadow-lg flex flex-col justify-center items-center text-center hidden md:flex"
-          style={{    border: "1px solid #343435",  backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-2">
-            12%
-          </h2>
-          <p className="text-gray-500 text-sm">
-            of ideas are proven to be winners
-          </p>
-        </div>
-
-        <div
-          className="rounded p-6 shadow-lg hidden md:flex"
-          style={{     border: "1px solid #343435", backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Code smarter, not harder
-          </h2>
-          <p className="text-gray-400 text-sm mb-4">
-            As a{" "}
-            <span className="text-white font-bold">developer and engineer</span>
-            , I want tools that make testing and experience creation a breeze.
-          </p>
-        </div>
-
-        <div
-          className="rounded p-6 shadow-lg"
-          style={{    border: "1px solid #343435", backgroundColor: "#1a1a1a" }}
-        >
-          <h2 className="text-xl font-semibold text-white mb-2">
-            Calendly
-            <span className="text-yellow-400 ml-2">★</span>
-          </h2>
-          <p className="text-gray-400 text-sm mb-4">
-            Crafting personalized experiences for 20 million users
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+const Card4 = () => {
+  return (
+    <div
+      className="w-full p-6 md:p-8 rounded-lg"
+      style={{
+        border: "1px solid #343435",
+        background: "rgba(26, 26, 26, 0.5)",
+        boxShadow: "0 4px 6px rgba(50, 48, 48, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2)",
+        backdropFilter: "blur(20px)",
+      }}
+    >
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ready to Start Your Project?
+        </h2>
+        <p className="text-gray-400 text-lg mb-8">
+          Let's discuss how we can help transform your business with technology
+        </p>
+      </div>
+      <div className="max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div
+            className="p-6 rounded-lg text-center"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
           >
-            Read customer story
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <div className="text-3xl mb-3">📞</div>
+            <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+            <p className="text-gray-400 text-sm">01300981501</p>
+          </div>
+          <div
+            className="p-6 rounded-lg text-center"
+            style={{
+              border: "1px solid #343435",
+              backgroundColor: "rgba(36, 36, 37, 0.5)",
+            }}
+          >
+            <div className="text-3xl mb-3">✉️</div>
+            <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+            <p className="text-gray-400 text-sm">mdrakibhossencse@gmail.com</p>
+          </div>
+        </div>
+        <div className="text-center">
+          <a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-[#ff8402] text-white font-semibold rounded-lg hover:bg-[#ff9502] transition-colors"
+          >
+            Get Free Consultation
           </a>
         </div>
       </div>
@@ -613,6 +330,7 @@ const HomeCard4 = () => {
 const Animation = () => {
   const playerRef = useRef(null);
   const sectionRef = useRef(null);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     const playAnimation = () => {
@@ -642,12 +360,44 @@ const Animation = () => {
     };
   }, []);
 
+  const tabs = [
+    { 
+      id: 0, 
+      title: "Architecto", 
+      icon: <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+    },
+    { 
+      id: 1, 
+      title: "Corrupti", 
+      icon: (
+        <>
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </>
+      )
+    },
+    { 
+      id: 2, 
+      title: "Excepturi", 
+      icon: <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+    },
+    { 
+      id: 3, 
+      title: "Consectetur", 
+      icon: (
+        <>
+          <circle cx="12" cy="12" r="10"></circle>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+        </>
+      )
+    },
+  ];
 
-  const HomeCards = [
-    { id: 1, component: <HomeCard1 /> },
-    { id: 2, component: <HomeCard2 /> },
-    { id: 3, component: <HomeCard3 /> },
-    { id: 4, component: <HomeCard4 /> },
+  const cards = [
+    { id: 1, component: <Card1 /> },
+    { id: 2, component: <Card2 /> },
+    { id: 3, component: <Card3 /> },
+    { id: 4, component: <Card4 /> },
   ];
 
   const gridBackgroundStyle = {
@@ -656,7 +406,7 @@ const Animation = () => {
   };
 
   return (
-    <div className="relative bg-[#0D0D0D] ">
+    <div className="relative bg-[#0D0D0D]" ref={sectionRef}>
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0" style={gridBackgroundStyle} />
         <CellEffect />
@@ -667,31 +417,53 @@ const Animation = () => {
       </div>
 
       <div className="relative z-20">
-        <div className="text-center mb-7 md:mb-0 lg:mb-0 xl:mb-0 2xl:mb-0  md:py-10 lg:py-10 xl:py-10 2xl:py-10">
+        <div className="text-center mb-7 md:mb-0 lg:mb-0 xl:mb-0 2xl:mb-0 md:py-10 lg:py-10 xl:py-10 2xl:py-10">
           <div
             className="iceberg-regular text-white text-xl w-full uppercase border-t border-b border-white/20 p-3  
         bg-gradient-to-r from-black via-[#0D0D0D] to-black mx-auto text-center"
           >
-            <h2 className=" text-white mx-auto text-center ">
+            <h2 className="text-white mx-auto text-center">
               The Sticky Card Showcase
             </h2>
           </div>
         </div>
 
-        <div className="relative min-h-[100vh] md:min-h-[200vh]   md:px-0 ">
-          <div className="flex flex-col items-center justify-start relative">
-            {HomeCards.map((card, idx) => (
-              <div
-                key={card.id}
-                className="w-11/12 md:w-9/12    sticky mb-4"
-                style={{
-                  top: `${70 + idx * 10}px`,
-                  zIndex: 100 + idx,
-                }}
+        {/* Tab Navigation */}
+        <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap bg-[#0D0D0D] text-gray-800 px-4 pb-4">
+          {tabs.map((tab, idx) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(idx)}
+              rel="noopener noreferrer"
+              className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 border-b transition-colors ${
+                activeTab === idx
+                  ? "border-gray-600 text-white border border-b-0 rounded-t-lg bg-[#1a1a1a]"
+                  : "border-gray-600 text-gray-400 hover:text-gray-300"
+              }`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
               >
-                {card.component}
-              </div>
-            ))}
+                {tab.icon}
+              </svg>
+              <span>{tab.title}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <div className="relative min-h-[70vh] md:px-4 lg:px-8 py-8">
+          <div className="flex flex-col items-center justify-start relative">
+            <div className="w-11/12 md:w-9/12">
+              {cards[activeTab].component}
+            </div>
           </div>
         </div>
       </div>

@@ -19,19 +19,11 @@ const FreeConsultationButton = () => {
     if (isOpen) {
       document.addEventListener("keydown", handleEscapeKey);
       document.body.style.overflow = "hidden";
-
-      // 🔥 Event: Drawer opened
-      if (window.dataLayer)
-        window.dataLayer.push({ event: "free_consultation_open" });
-
+      // Removed GTM dataLayer tracking
       stopCycle();
     } else {
       document.body.style.overflow = "";
-
-      // 🔥 Event: Drawer closed
-      if (window.dataLayer)
-        window.dataLayer.push({ event: "free_consultation_close" });
-
+      // Removed GTM dataLayer tracking
       restartCycleAfterDelay();
     }
 
@@ -76,14 +68,7 @@ const FreeConsultationButton = () => {
   // Form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // 🔥 Event: Free Consultation Lead
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: "free_consultation_form_submit",
-      });
-    }
-
+    // Removed GTM dataLayer tracking
     alert("Form Submitted!");
     setIsOpen(false);
   };

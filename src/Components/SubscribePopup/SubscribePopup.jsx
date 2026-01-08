@@ -22,27 +22,14 @@ const SubscribePopup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: "subscribe_popup_submit",
-        page: location.pathname,
-      });
-    }
-
+    // Removed GTM dataLayer tracking
     alert("Form Submitted");
   };
 
   const closePopup = () => {
     const popup = document.querySelector(".subscribe-popup");
     if (popup) popup.style.display = "none";
-
-    if (window.dataLayer) {
-      window.dataLayer.push({
-        event: "subscribe_popup_closed",
-        page: location.pathname,
-      });
-    }
+    // Removed GTM dataLayer tracking
   };
 
   return (

@@ -10,6 +10,7 @@ import HilnexItCircle from "../../Components/HilnexItCircle/HilnexItCircle";
 import BrandItemLogoCard from "../../Components/HomeComponents/BrandItemLogoCard/BrandItemLogoCard";
 import DetectedUpGrade from "../../Components/MobileDevice/DetectedUpGrade";
 import WorkflowSection from "../../Components/HomeComponents/WorkflowSection/WorkflowSection";
+import FAQSection from "../../Components/HomeComponents/FAQSection/FAQSection";
 import OurSolutionsMobile from "../../Components/HomeComponents/OurSolutionsMobile/OurSolutionsMobile";
 import WorkProgessbarMobile from "../../Components/HomeComponents/WorkProgessbarMobile/WorkProgessbarMobile";
 import HandMobile from "../../Components/HandMobile/HandMobile";
@@ -27,13 +28,13 @@ const Home = () => {
         <OurSolutionsMobile />
         <BrandItemLogoCard />
         <VapiMobile />
-        <Animation />
         <FaceRecognitionAnimation />
-        {/* <FaceRecognitionAnimationLargeDevice />   */}
+            
         <HilnexItCircle />
         <HandMobile />
         <WorkProgessbarMobile />
         <WorkflowSection />
+        <FAQSection />
         <GlobMap />
       </div>
     </div>

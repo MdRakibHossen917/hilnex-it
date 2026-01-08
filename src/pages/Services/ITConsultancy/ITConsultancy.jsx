@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { FaExternalLinkAlt, FaGithub, FaGlobe, FaCode, FaCheckCircle } from "react-icons/fa";
 import CellEffect from "../../../Components/CellEffect/CellEffect";
 import GlobMapAllPage from "../../../Components/Shared/GlobMapAllPage/GlobMapAllPage";
 import ParticlesBackground from "../../../Components/Shared/ParticlesBackground/ParticlesBackground";
@@ -196,6 +196,52 @@ const ITConsultancy = () => {
         focus: "E-commerce, POS Systems, CRM",
       },
     ],
+    projects: [
+      {
+        id: 1,
+        name: "Cloud Migration Expert",
+        description:
+          "A comprehensive cloud migration consultancy project that helped a mid-size enterprise migrate from on-premise infrastructure to AWS cloud. Reduced infrastructure costs by 45%, improved scalability, and achieved 99.9% uptime with enhanced security measures.",
+        url: "https://cloud-migration-expert.vercel.app/",
+        github: "#",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+        technologies: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD"],
+        features: [
+          "Cloud Strategy",
+          "Migration Planning",
+          "Infrastructure Setup",
+          "Security Implementation",
+          "Cost Optimization",
+          "Performance Monitoring",
+          "Disaster Recovery",
+          "Documentation",
+        ],
+        category: "Cloud Consulting",
+        status: "Live",
+      },
+      {
+        id: 2,
+        name: "Digital Transformation Hub",
+        description:
+          "A strategic IT consultancy project for digital transformation, helping a traditional business modernize its operations. Includes technology assessment, digital strategy development, system integration, and change management support with measurable ROI improvements.",
+        url: "https://digital-transformation-hub.vercel.app/",
+        github: "#",
+        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800",
+        technologies: ["Azure", "Salesforce", "SAP", "Power BI", "Agile"],
+        features: [
+          "Technology Assessment",
+          "Digital Strategy",
+          "System Integration",
+          "Change Management",
+          "Training & Support",
+          "ROI Analysis",
+          "Risk Management",
+          "Continuous Improvement",
+        ],
+        category: "IT Consulting",
+        status: "Live",
+      },
+    ],
   };
 
   if (loading) {
@@ -287,6 +333,21 @@ const ITConsultancy = () => {
         .last-card-position {
           transform: translateY(50%);
           margin-top: -100px;
+        }
+        
+        .project-card {
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+          transform: translateY(-10px);
+          border-color: rgba(255, 132, 2, 0.5);
+          box-shadow: 0 20px 50px rgba(255, 132, 2, 0.2);
+        }
+        .project-image {
+          transition: transform 0.4s ease;
+        }
+        .project-card:hover .project-image {
+          transform: scale(1.05);
         }
         
         @media (max-width: 768px) {
@@ -645,6 +706,122 @@ const ITConsultancy = () => {
                   <p className="text-gray-400 text-sm">
                     {specialty.description}
                   </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Featured Projects Section */}
+          <section className="tech-container p-6 md:p-8 mb-6 w-11/12 md:w-9/12 mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                Featured <span className="neon-accent">Projects</span>
+              </h2>
+              <div className="w-24 md:w-32 h-1 my-2 bg-[#ff8402] mx-auto"></div>
+              <p className="text-gray-300 text-sm md:text-base mt-4 max-w-2xl mx-auto">
+                Explore our recent IT consultancy projects that showcase our expertise
+                in strategic planning, cloud solutions, and digital transformation.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {servicesData.projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="tech-container project-card overflow-hidden"
+                  style={{ position: "relative", zIndex: 35 }}
+                >
+                  {/* Project Image */}
+                  <div className="relative h-48 md:h-64 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.name}
+                      className="w-full h-full object-cover project-image"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl md:text-2xl font-bold text-white">
+                          {project.name}
+                        </h3>
+                        <span className="px-3 py-1 bg-[#ff8402]/20 border border-[#ff8402]/50 text-[#ff8402] text-xs font-semibold rounded">
+                          {project.status}
+                        </span>
+                      </div>
+                      <p className="text-xs md:text-sm text-gray-300 bg-black/50 px-2 py-1 rounded inline-block">
+                        {project.category}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <p className="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-[#ff8402] mb-3 flex items-center">
+                        <FaCode className="mr-2" />
+                        Technologies Used
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="tech-badge px-3 py-1 rounded text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-[#ff8402] mb-3 flex items-center">
+                        <FaCheckCircle className="mr-2" />
+                        Key Features
+                      </h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {project.features.slice(0, 4).map((feature, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start text-xs text-gray-400"
+                          >
+                            <span className="text-[#ff8402] mr-2 mt-1">▸</span>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 bg-[#ff8402] hover:bg-[#e67600] text-black font-semibold py-3 px-4 rounded transition duration-300 btn-hover-instant"
+                      >
+                        <FaGlobe />
+                        <span>Visit Live Site</span>
+                        <FaExternalLinkAlt className="text-xs" />
+                      </a>
+                      {project.github !== "#" && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-4 rounded transition duration-300 border border-[#ff8402]/30 btn-hover-instant"
+                        >
+                          <FaGithub />
+                          <span className="hidden sm:inline">View Code</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

@@ -6,13 +6,7 @@ export default function usePageTracking() {
   const location = useLocation();
 
   useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'page_view',
-      page_path: location.pathname,
-      page_title: document.title,
-      page_location: window.location.href,
-      timestamp: new Date().toISOString()
-    });
+    // Page tracking logic can be added here if needed
+    // Removed GTM dataLayer tracking
   }, [location]);
 }
